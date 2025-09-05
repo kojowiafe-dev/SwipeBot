@@ -38,7 +38,11 @@ export async function startConvAI({
   await pc.setLocalDescription(offer);
 
   const answer = await getOfferSDP({ sdp: offer.sdp, model, voiceId });
-  await pc.setRemoteDescription({ type: "answer", sdp: answer.sdp });
+  await pc.setRemoteDescription(answer);
+  //   pc.ontrack = (event) => {
+  //     console.log("🎧 Remote audio stream received:", event.streams);
+  //     audioRef.current.srcObject = event.streams[0];
+  //   };
 
   // Return a handle to stop
   return {
