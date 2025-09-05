@@ -1,4 +1,4 @@
-from .schemas import ChatRequest, ChatResponse
+from schemas import ChatRequest, ChatResponse
 
 
 SYSTEM_PROMPT = (
